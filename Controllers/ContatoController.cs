@@ -38,6 +38,7 @@ namespace ProjetoFdevs.Controllers
 
         public IActionResult Apagar(int id) 
         {
+            _contatoRepositorio.Apagar(id);
             return RedirectToAction("Index");
         }
 

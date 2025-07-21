@@ -21,7 +21,14 @@ namespace ProjetoFdevsAspNet.Repositorio
 
         public bool Apagar(int id)
         {
-            throw new System.NotImplementedException();
+            ContatoModel contatoDB = ListarPorId(id);
+
+            if (contatoDB == null) throw new System.Exception("Houve um erro ao excluir o contato!");
+
+            _bancoContext.Contatos.Remove(contatoDB);
+            _bancoContext.SaveChanges();
+
+            return true;
         }
 
         public ContatoModel Atualizar(ContatoModel contato)
