@@ -4,8 +4,8 @@
 }
 
 <div class="text-center">
-    <h3>Deseja apagar o contato @Model.Nome?</h3>
+    <h3>Deseja apagar o contato (@Model.Nome)?</h3>
 </div>
 
-<a class="btn btn-outline-primary" role="button" asp-controller="Contato" asp-action="Index">Cancelar</a>
-<a class="btn btn-outline-danger" role="button" asp-controller="Contato" asp-action="Apagar">Confirmar</a>
+<a class="btn btn-outline-primary" asp-action="Index" asp-controller="Contato" role="button">Cancelar</a>
+<a class="btn btn-outline-danger" asp-action="Apagar" asp-controller="Contato" asp-route-id="@Model.Id" role="button">Confirmar</a>
